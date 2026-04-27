@@ -29,5 +29,6 @@ public class GameComponent extends JComponent {
 
 
 	// TODO: draw based on model state
+	model.getPlayer().drawOn(g2);
 	}
 }
