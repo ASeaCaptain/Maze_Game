@@ -1,6 +1,6 @@
 package model;
 
-
+import java.util.ArrayList;
 
 /**
  * Stores the current state of the game and controls the main game rules.
@@ -17,9 +17,11 @@ public class GameModel {
 	// Work on the lab to complete GameModel and Player for initial setup
 	
 	private Player player;
+	private ArrayList<Enemy> enemies = new ArrayList<>();
 	
 	public GameModel() {
 		this.player = new Player(5, 5);
+		this.enemies.add(new Enemy(7, 7));
 	}
 
 	/**
@@ -44,5 +46,14 @@ public class GameModel {
 	public void movePlayerRight() {
 		player.moveBy(0, 1);
 	}
+
+	/**
+	 * @return the enemies
+	 */
+	public ArrayList<Enemy> getEnemies() {
+		return enemies;
+	}
+	
+	
 
 }
