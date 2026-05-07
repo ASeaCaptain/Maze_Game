@@ -1,5 +1,7 @@
 package model;
 
-public class KeyListener {
+import java.awt.event.KeyAdapter;
+
+public class KeyListener extends KeyAdapter {
 
 }
