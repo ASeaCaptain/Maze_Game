@@ -2,9 +2,11 @@ package ui;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JComponent;
 
+import model.Enemy;
 import model.GameModel;
 
 public class GameComponent extends JComponent {

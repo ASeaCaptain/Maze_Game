@@ -1,13 +1,14 @@
 package model;
 
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 public abstract class Entity {
 	
 	
-	private int row;
-	private int col;
-	private static final int TILE_SIZE = 40;
+	protected int row;
+	protected int col;
+	protected static final int TILE_SIZE = 40;
 	
 	public Entity(int row, int col) {
 		this.row = row;
@@ -28,7 +29,7 @@ public abstract class Entity {
 		return col;
 	}
 	
-	public void drawOn(Graphics2D g2) {
+	public void drawOn(Graphics2D g2, BufferedImage sprite) {
 		int x = this.col * TILE_SIZE;
 		int y = this.row * TILE_SIZE;
 		
