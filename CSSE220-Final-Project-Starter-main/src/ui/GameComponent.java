@@ -2,9 +2,12 @@ package ui;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JComponent;
+import javax.swing.Timer;
 
 import model.Enemy;
 import model.GameModel;
@@ -12,9 +15,15 @@ import model.GameModel;
 public class GameComponent extends JComponent implements KeyListener {
 
 	private GameModel model;
+	private Timer timer;
 
 	public GameComponent(GameModel model) {
 		this.model = model;
+		timer = new Timer(30, e -> {
+			  repaint();
+		});
+
+		timer.start();
 		
 		setFocusable(true);
 		addKeyListener(this);
