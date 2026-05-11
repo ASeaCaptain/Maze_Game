@@ -9,19 +9,15 @@ import javax.swing.JComponent;
 import model.Enemy;
 import model.GameModel;
 
-public class GameComponent extends JComponent {
+public class GameComponent extends JComponent implements KeyListener {
 
 	private GameModel model;
-	private SpriteGenerator sprites;
-	private BufferedImage playerSprite;
-	private BufferedImage zombieSprite;
-
 
 	public GameComponent(GameModel model) {
 		this.model = model;
-		this.sprites = new SpriteGenerator();
-		this.playerSprite = sprites.generatePlayerSprite();
-		this.zombieSprite = sprites.generateZombieSprite();
+		
+		setFocusable(true);
+		addKeyListener(this);
 	}
 
 	@Override
@@ -34,10 +30,35 @@ public class GameComponent extends JComponent {
 
 
 	// TODO: draw based on model state
-		model.getPlayer().drawOn(g2, playerSprite);
+		model.getPlayer().drawOn(g2);
 		
 		for (Enemy enemy : model.getEnemies()) {
-			enemy.drawOn(g2, zombieSprite);
+			enemy.drawOn(g2);
 		}
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+		
+		if (key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {
+			model.movePlayerUp();
+		} else if (key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) {
+			model.movePlayerDown();
+		} else if (key == KeyEvent.VK_LEFT || key == KeyEvent.VK_A) {
+			model.movePlayerLeft();
+		} else if (key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_D) {
+			model.movePlayerRight();
+		}
+		
+		repaint();
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
 	}
 }

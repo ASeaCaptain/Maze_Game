@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 
 public abstract class Entity {
 	
-	
 	protected int row;
 	protected int col;
 	protected static final int TILE_SIZE = 40;
@@ -29,16 +28,18 @@ public abstract class Entity {
 		return col;
 	}
 	
-	public void drawOn(Graphics2D g2, BufferedImage sprite) {
-		int x = this.col * TILE_SIZE;
-		int y = this.row * TILE_SIZE;
-		
-		g2.fillRect(x, y, TILE_SIZE, TILE_SIZE);
-	}
+//	public void drawOn(Graphics2D g2, BufferedImage sprite) {
+//		int x = this.col * TILE_SIZE;
+//		int y = this.row * TILE_SIZE;
+//		
+//		g2.fillRect(x, y, TILE_SIZE, TILE_SIZE);
+//	}
 	
 	public void moveBy(int dRow, int dCol) {
 		this.row += dRow;
 		this.col += dCol;
 	}
+	
+	public abstract void drawOn(Graphics2D g2);
 
 }
