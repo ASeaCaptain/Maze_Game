@@ -20,7 +20,7 @@ public class MainApp {
 	// This runs only once at startup:
 	// MainApp creates and connects objects (no game logic here)
 	public void run() {
-		GameModel model = new GameModel("\\Users\\seaworb\\Documents\\Maze_Game\\CSSE220-Final-Project-Starter-main\\src\\model\\level1.txt");
+		GameModel model = new GameModel("resources\\levels\\level1.txt");
 		GameWindow window = new GameWindow(model);
 		window.show();
 	}
