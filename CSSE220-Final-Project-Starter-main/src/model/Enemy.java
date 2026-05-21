@@ -8,15 +8,22 @@ import javax.imageio.ImageIO;
 
 public class Enemy extends Entity {
 
-	private BufferedImage sprite;
-
-	public Enemy(int row, int col) {
-		super(row, col);
+	public int cooldown;
+	public static BufferedImage sprite;
+	static {
 		try {
 			sprite = ImageIO.read(Enemy.class.getResource("zombie.png"));
 		} catch (IOException | IllegalArgumentException e) {
 			sprite = null;
 		}
+	}
+
+	public Enemy(int row, int col, int dRow, int dCol) {
+		super(row, col);
+		this.dRow = dRow;
+		this.dCol = dCol;
+		this.cooldown = 0;
+		
 	}
 
 	@Override
@@ -31,4 +38,24 @@ public class Enemy extends Entity {
 			g2.fillRect(x, y, TILE_SIZE, TILE_SIZE);
 		}
 	}
+
+	@Override
+	public void update() {
+		if(cooldown <= 0) {
+			this.lastdRow = this.dRow;
+			this.lastdCol = this.dCol;
+			this.row += this.dRow;
+			this.col += this.dCol;
+			this.cooldown = 6;
+		}
+		cooldown -= 1;
+	}
+
+	@Override
+	public void reverse() {
+		this.cooldown = 0;
+		super.reverse();
+	}
+
+
 }

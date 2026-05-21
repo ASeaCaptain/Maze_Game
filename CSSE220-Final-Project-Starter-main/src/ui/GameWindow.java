@@ -3,6 +3,7 @@ package ui;
 import javax.swing.JFrame;
 
 import model.GameModel;
+import model.Level;
 /**
  * GameWindow owns the frame
  **/
