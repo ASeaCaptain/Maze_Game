@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
+<<<<<<< Updated upstream
 public abstract class Entity extends Collidable {
 	
 	protected int row;
@@ -19,6 +20,18 @@ public abstract class Entity extends Collidable {
 		this.col = col;
 		this.dRow = 0;
 		this.dCol = 0;
+=======
+public abstract class SolidEntity extends Collidable {
+
+	protected int row;
+	protected int col;
+	protected static final int TILE_SIZE = 40;
+	
+	public SolidEntity(int row, int col) {
+		this.row = row;
+		this.col = col;
+
+>>>>>>> Stashed changes
 	}
 	
 	/**
@@ -35,6 +48,7 @@ public abstract class Entity extends Collidable {
 		return col;
 	}
 	
+<<<<<<< Updated upstream
 	
 	/**
 	 * @return the dRow
@@ -77,6 +91,8 @@ public abstract class Entity extends Collidable {
 
 	}
 	
+=======
+>>>>>>> Stashed changes
 	public abstract void drawOn(Graphics2D g2);
 	
 	public Rectangle getBounds() {
@@ -87,6 +103,7 @@ public abstract class Entity extends Collidable {
 		return this.getBounds().intersects(other.getBounds());
 	}
 	
+<<<<<<< Updated upstream
 	public void reverse() {
 		dRow = -lastdRow;
 		dCol = -lastdCol;
@@ -100,3 +117,6 @@ public abstract class Entity extends Collidable {
 }
 
 	
+=======
+}
+>>>>>>> Stashed changes

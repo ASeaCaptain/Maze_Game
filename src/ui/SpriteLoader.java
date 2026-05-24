@@ -9,6 +9,7 @@ public class SpriteLoader {
 
     private BufferedImage playerSprite;
     private BufferedImage zombieSprite;
+<<<<<<< Updated upstream
     private BufferedImage wallSprite;
     private BufferedImage coinSprite;
     private BufferedImage exitSprite;
@@ -20,6 +21,13 @@ public class SpriteLoader {
             wallSprite = ImageIO.read(new File("wall.png"));
             coinSprite = ImageIO.read(new File("coin.png"));
             exitSprite = ImageIO.read(new File("exit.png"));
+=======
+
+    public SpriteLoader() {
+        try {
+            playerSprite = ImageIO.read(new File("images/player.png"));
+            zombieSprite = ImageIO.read(new File("images/zombie.png"));
+>>>>>>> Stashed changes
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -32,6 +40,7 @@ public class SpriteLoader {
     public BufferedImage getZombieSprite() {
         return zombieSprite;
     }
+<<<<<<< Updated upstream
     public BufferedImage getWallSprite() {
         return wallSprite;
     }
@@ -42,4 +51,6 @@ public class SpriteLoader {
         return exitSprite;
     }
 
+=======
+>>>>>>> Stashed changes
 }

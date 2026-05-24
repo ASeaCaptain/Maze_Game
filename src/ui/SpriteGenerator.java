@@ -33,6 +33,7 @@ public class SpriteGenerator {
         g2d.dispose();
         return img;
     }
+<<<<<<< Updated upstream
     public BufferedImage generateWallSprite() {
         BufferedImage img = new BufferedImage(32, 32, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = img.createGraphics();
@@ -72,4 +73,6 @@ public class SpriteGenerator {
         g2d.dispose();
         return img;
     }
+=======
+>>>>>>> Stashed changes
 }

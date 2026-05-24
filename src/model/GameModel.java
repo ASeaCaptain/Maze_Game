@@ -19,6 +19,7 @@ public class GameModel {
 	
 	private Player player;
 	private ArrayList<Enemy> enemies = new ArrayList<>();
+<<<<<<< Updated upstream
 	private ArrayList<Wall> walls = new ArrayList<>();
 	private ArrayList<Coin> coins = new ArrayList<>();
 	private Exit exit;
@@ -41,6 +42,12 @@ public class GameModel {
 		}
 		this.win = false;
 		this.lose = false;
+=======
+	
+	public GameModel() {
+		this.player = new Player(5, 5);
+		this.enemies.add(new Enemy(7, 7));
+>>>>>>> Stashed changes
 	}
 
 	/**
@@ -50,7 +57,25 @@ public class GameModel {
 		return player;
 	}
 	
+<<<<<<< Updated upstream
 
+=======
+	public void movePlayerUp() {
+		player.moveBy(-1, 0);
+	}
+	
+	public void movePlayerDown() {
+		player.moveBy(1, 0);
+	}
+	
+	public void movePlayerLeft() {
+		player.moveBy(0, -1);
+	}
+	
+	public void movePlayerRight() {
+		player.moveBy(0, 1);
+	}
+>>>>>>> Stashed changes
 
 	/**
 	 * @return the enemies
@@ -59,6 +84,7 @@ public class GameModel {
 		return enemies;
 	}
 	
+<<<<<<< Updated upstream
 	public void updateAll() {
 		player.update();
 		for(Enemy e : enemies) {
@@ -169,6 +195,9 @@ public class GameModel {
 	public boolean isLose() {
 		return lose;
 	}
+=======
+	
+>>>>>>> Stashed changes
 	
 
 
