@@ -91,5 +91,12 @@ public abstract class Entity extends Collidable {
 		dRow = -lastdRow;
 		dCol = -lastdCol;
 	}
+	
+	public void undoMove() {
+		this.row -= this.lastdRow;
+		this.col -= this.lastdCol;
+	}
 
 }
+
+	
